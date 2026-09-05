@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Cytracon",
   "license": "MIT",
-  "description": "Bar button and panel for SysCare on Omarchy: CPU, memory, disk, pending pacman updates, and a launch into the GTK optimizer. SysCare itself is installed separately.",
+  "description": "System optimizer for Omarchy (cleaner, updates, processes, security). This plugin shows CPU, memory, disk, and pending updates, then opens SysCare. The GTK app is installed separately.",
   "kinds": [
     "bar-widget"
   ],
@@ -15,7 +15,7 @@
   },
   "barWidget": {
     "displayName": "SysCare",
-    "description": "Open SysCare and show a live system snapshot",
+    "description": "Omarchy system optimizer: live snapshot, updates, and a launch into SysCare",
     "category": "System",
     "aliases": [
       "syscare",

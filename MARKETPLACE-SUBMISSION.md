@@ -30,6 +30,8 @@ cleaner
 
 ### Maintainer notes
 
+What it is: SysCare is the Omarchy system optimizer (Stacer-style cleaner, updates, processes, security). This plugin only shows a live snapshot and opens the GTK app.
+
 Plugin ID: `io.github.cytracon.syscare`.
 
 This is an Omarchy Quattro bar-widget (Quickshell) for SysCare 0.3.1 on Omarchy/Arch. It does not ship the GTK app and does not run installers. `omarchy plugin add` only clones this repo. SysCare itself is installed separately with `omarchy install syscare` (user-local `~/.local`).
