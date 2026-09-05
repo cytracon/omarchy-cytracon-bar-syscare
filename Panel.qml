@@ -76,8 +76,19 @@ Panel {
   }
 
   function launchSysCare() {
-    if (!root.installed) return
+    if (!root.installed) {
+      installApp()
+      return
+    }
     Quickshell.execDetached([root.syscareBin])
+    root.close()
+  }
+
+  function installApp() {
+    Quickshell.execDetached([
+      "omarchy-launch-floating-terminal-with-presentation",
+      "omarchy", "install", "syscare"
+    ])
     root.close()
   }
 
@@ -162,6 +173,7 @@ Panel {
       onTabRequested: function(direction) { root.switchPanel(direction) }
       onTextKey: function(t) {
         if (t === "o" || t === "O") root.launchSysCare()
+        else if (t === "i" || t === "I") root.installApp()
         else if (t === "c" || t === "C") root.runSafeClean()
         else if (t === "s" || t === "S") root.openSource()
       }
@@ -195,10 +207,10 @@ Panel {
 
         ActionRow {
           width: parent.width
-          title: root.installed ? "Open SysCare" : "SysCare is not installed"
-          hint: root.installed ? "Right-click the bar icon, or press O" : "omarchy install syscare"
+          title: root.installed ? "Open SysCare" : "Install SysCare"
+          hint: root.installed ? "Right-click the bar icon, or press O" : "Installs the GTK app. Press I"
           selected: root.cursorActive && root.actionIndex === 0
-          enabled: root.installed
+          enabled: true
           onClicked: root.launchSysCare()
         }
 

@@ -2,17 +2,23 @@
 
 **What it is.** [SysCare](https://github.com/cytracon/syscare) is the Omarchy system optimizer (Stacer-style): clean caches, review updates, inspect processes and security, uninstall packages.
 
-This listing is a **Quickshell bar plugin**. It does **not** ship the GTK app. The **SC** button shows CPU, memory, disk, and pending pacman updates; right-click opens SysCare; the panel can run a user-cache-only safe clean. Install the app with `omarchy install syscare`.
+This plugin is the bar UI for that app: live CPU/memory/disk/updates, a user-cache-only safe clean, and a launch into SysCare. If the GTK app is missing, the panel runs `omarchy install syscare` (app + this plugin).
 
 Layout follows the official Omarchy plugin template: `manifest.json`, `BarWidget.qml`, `Panel.qml`, `Model.js`.
 
 ## Install
 
+One command installs the **GTK app and this plugin**:
+
+```bash
+omarchy install syscare
+```
+
+Or add the widget first, then click **Install SysCare** in the panel:
+
 ```sh
 omarchy plugin add https://github.com/cytracon/omarchy-syscare.git --enable
 ```
-
-The widget lands in the right bar section. Move it in Omarchy bar settings:
 
 ```sh
 omarchy bar move io.github.cytracon.syscare --section right
@@ -20,7 +26,7 @@ omarchy bar move io.github.cytracon.syscare --section right
 
 ## Usage
 
-Click the **SC** button to open or close the details panel. Press Escape to close it. Right-click launches SysCare. In the panel: **O** open, **C** safe clean, **S** source.
+Click **SC** to open or close the panel. Escape closes it. Right-click opens SysCare (or installs if missing). In the panel: **I** install, **O** open, **C** safe clean, **S** source.
 
 ## Remove
 
@@ -43,16 +49,16 @@ That writes `~/.local/bin/syscare` and a desktop entry. App docs: [cytracon/sysc
 ## External dependencies
 
 - Omarchy Quattro shell (Quickshell). No extra QML modules.
-- Optional: the SysCare GTK app at the fixed path `$HOME/.local/bin/syscare`.
-- `omarchy-launch-browser` for the source link (ships with Omarchy).
+- SysCare at `$HOME/.local/bin/syscare` (installed by the panel or by `omarchy install syscare`).
+- `omarchy-launch-floating-terminal-with-presentation` and `omarchy-launch-browser` (ship with Omarchy).
 - Safe clean runs `syscare --clean-safe` (user caches only, no root).
 
 ## Security
 
-- No install hooks, daemons, privilege escalation, or network clients
 - No writes to Hyprland / `shell.json` / pacman
-- Left-click only toggles the panel
-- Right-click runs the fixed path `$HOME/.local/bin/syscare` when that file exists
+- Left-click toggles the panel
+- Right-click runs `$HOME/.local/bin/syscare`, or installs SysCare if missing
+- Install runs `omarchy install syscare` in a floating terminal
 - “Source” opens `https://github.com/cytracon/syscare` via `omarchy-launch-browser`
 
 Omarchy plugins run unsandboxed. Review `BarWidget.qml`, `Panel.qml`, and `Model.js` before enabling.
