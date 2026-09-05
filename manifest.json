@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.cytracon.syscare",
+  "name": "SysCare",
+  "version": "1.0.0",
+  "author": "Cytracon",
+  "license": "MIT",
+  "description": "Bar button and panel for SysCare on Omarchy: CPU, memory, disk, pending pacman updates, and a launch into the GTK optimizer. SysCare itself is installed separately.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "SysCare",
+    "description": "Open SysCare and show a live system snapshot",
+    "category": "System",
+    "aliases": [
+      "syscare",
+      "cleaner",
+      "updates",
+      "cytracon"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
