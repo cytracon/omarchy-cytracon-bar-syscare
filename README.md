@@ -1,6 +1,6 @@
 # SysCare — Omarchy plugin
 
-Omarchy Quattro bar widget for **[SysCare](https://github.com/cytracon/syscare)** `0.3.0`.
+Omarchy Quattro bar widget for **[SysCare](https://github.com/cytracon/syscare)** `0.3.1`.
 
 This listing is a **Quickshell bar plugin**. It does **not** ship the GTK SysCare app. Left-click opens a panel with CPU, memory, disk, and pending updates; right-click launches SysCare when `~/.local/bin/syscare` is present.
 
@@ -36,14 +36,6 @@ User-local. On Omarchy:
 
 ```bash
 omarchy install syscare
-```
-
-or:
-
-```bash
-git clone https://github.com/cytracon/syscare.git
-cd syscare
-./install-local.sh
 ```
 
 That writes `~/.local/bin/syscare` and a desktop entry. App docs: [cytracon/syscare](https://github.com/cytracon/syscare). Removing this plugin does not uninstall SysCare.
