@@ -8,7 +8,8 @@ import "Model.js" as Model
 Panel {
   id: root
   moduleName: "io.github.cytracon.syscare"
-  manageIpc: false
+  ipcTarget: "io.github.cytracon.syscare"
+  manageIpc: (root.QsWindow.window !== null && root.QsWindow.window.screen === Quickshell.screens[0])
 
   property var anchorItem: null
   property var hostWidget: null
@@ -186,7 +187,7 @@ Panel {
         PanelHero {
           width: parent.width
           title: "SysCare"
-          meta: root.installed ? (root.liveVersion || "0.3.0") : "Not installed in ~/.local"
+          meta: root.installed ? (root.liveVersion || "0.3.2") : "Not installed in ~/.local"
           foreground: root.foreground
           fontFamily: root.fontFamily
         }

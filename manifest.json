@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.cytracon.syscare",
   "name": "SysCare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Cytracon",
   "license": "MIT",
   "description": "System optimizer for Omarchy (cleaner, updates, processes, security). Live snapshot, safe clean, and a launch into SysCare. If missing, the panel installs it.",

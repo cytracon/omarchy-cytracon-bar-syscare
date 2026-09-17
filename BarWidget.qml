@@ -1,5 +1,4 @@
 import QtQuick
-import Quickshell
 import qs.Ui
 
 BarWidget {
@@ -55,16 +54,6 @@ BarWidget {
       root.injectPanel()
       Qt.callLater(root.injectPanel)
     }
-  }
-
-  IpcHandler {
-    target: "io.github.cytracon.syscare"
-    function open(): void { root.open() }
-    function close(): void { root.close() }
-    function show(): void { root.open() }
-    function hide(): void { root.close() }
-    function toggle(): void { root.toggle() }
-    function launch(): void { root.launchSysCare() }
   }
 
   WidgetButton {
