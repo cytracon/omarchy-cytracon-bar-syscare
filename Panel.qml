@@ -187,7 +187,7 @@ Panel {
         PanelHero {
           width: parent.width
           title: "SysCare"
-          meta: root.installed ? (root.liveVersion || "0.3.2") : "Not installed in ~/.local"
+          meta: root.installed ? (root.liveVersion ? ("v" + root.liveVersion) : "installed") : "Not installed in ~/.local"
           foreground: root.foreground
           fontFamily: root.fontFamily
         }
