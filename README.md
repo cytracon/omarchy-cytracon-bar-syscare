@@ -1,6 +1,6 @@
 # SysCare — Omarchy plugin
 
-**What it is.** [SysCare](https://github.com/cytracon/syscare) is the Omarchy system optimizer (Stacer-style): clean caches, review updates, inspect processes and security, uninstall packages.
+**What it is.** [SysCare](https://github.com/cytracon/omarchy-cytracon-syscare) is the Omarchy system optimizer (Stacer-style): clean caches, review updates, inspect processes and security, uninstall packages.
 
 This plugin is the bar UI for that app: live CPU/memory/disk/updates, a user-cache-only safe clean, and a launch into SysCare. If the GTK app is missing, the panel runs `omarchy install syscare` (app + this plugin).
 
@@ -17,7 +17,7 @@ omarchy install syscare
 Or add the widget first, then click **Install SysCare** in the panel:
 
 ```sh
-omarchy plugin add https://github.com/cytracon/omarchy-syscare.git --enable
+omarchy plugin add https://github.com/cytracon/omarchy-cytracon-bar-syscare.git --enable
 ```
 
 ```sh
@@ -44,7 +44,7 @@ User-local. On Omarchy:
 omarchy install syscare
 ```
 
-That writes `~/.local/bin/syscare` and a desktop entry. App docs: [cytracon/syscare](https://github.com/cytracon/syscare). Removing this plugin does not uninstall SysCare.
+That writes `~/.local/bin/syscare` and a desktop entry. App docs: [cytracon/omarchy-cytracon-syscare](https://github.com/cytracon/omarchy-cytracon-syscare). Removing this plugin does not uninstall SysCare.
 
 ## External dependencies
 
@@ -59,7 +59,7 @@ That writes `~/.local/bin/syscare` and a desktop entry. App docs: [cytracon/sysc
 - Left-click toggles the panel
 - Right-click runs `$HOME/.local/bin/syscare`, or installs SysCare if missing
 - Install runs `omarchy install syscare` in a floating terminal
-- “Source” opens `https://github.com/cytracon/syscare` via `omarchy-launch-browser`
+- “Source” opens `https://github.com/cytracon/omarchy-cytracon-syscare` via `omarchy-launch-browser`
 
 Omarchy plugins run unsandboxed. Review `BarWidget.qml`, `Panel.qml`, and `Model.js` before enabling.
 

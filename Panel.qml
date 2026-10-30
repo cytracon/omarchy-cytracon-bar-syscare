@@ -14,7 +14,7 @@ Panel {
   property var anchorItem: null
   property var hostWidget: null
 
-  readonly property string sourceUrl: "https://github.com/cytracon/syscare"
+  readonly property string sourceUrl: "https://github.com/cytracon/omarchy-cytracon-syscare"
   readonly property string syscareBin: Quickshell.env("HOME") + "/.local/bin/syscare"
   readonly property color foreground: bar ? bar.foreground : Color.foreground
   readonly property color dim: Qt.darker(foreground, 1.55)
@@ -227,7 +227,7 @@ Panel {
         ActionRow {
           width: parent.width
           title: "Source"
-          hint: "github.com/cytracon/syscare"
+          hint: "github.com/cytracon/omarchy-cytracon-syscare"
           selected: root.cursorActive && root.actionIndex === 2
           enabled: true
           onClicked: root.openSource()
